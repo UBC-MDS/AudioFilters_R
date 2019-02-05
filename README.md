@@ -1,4 +1,4 @@
-# 524_Rmarcelle_paul_socorro
+# Audio Filters R
 Wave convolutions in R
 
 ### Contributors
