@@ -8,4 +8,7 @@
 #'
 low_pass_filter <- function(input_signal, cutoff_frequency) {
   print("Low pass filter!")
+
+  bf <- signal::butter(3, 1/cutoff_frequency)                          # low-pass filter
+  output_signal <- signal::filter(bf, input_signal) # apply filter
 }
