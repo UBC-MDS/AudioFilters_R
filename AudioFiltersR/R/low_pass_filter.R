@@ -29,13 +29,3 @@ low_pass_filter <- function(input_signal, cutoff_frequency) {
   return(output_signal)
 }
 
-#TBD input signal not null
-
-
-# # Raise error if input_signal is of an unsupported type
-# if input_signal.dtype.kind not in 'iu' and input_signal.dtype.kind != 'f' :
-#   raise TypeError("'input_signal' must be an array of integers or floats")
-#
-# # Raise error if cutoff_frequency is not positive
-# if cutoff_frequency <= 0:
-#   raise Exception('cutoff frequency must be a positive number')
