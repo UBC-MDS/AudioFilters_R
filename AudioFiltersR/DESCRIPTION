@@ -19,5 +19,6 @@ Suggests:
     rmarkdown
 Imports: 
     signal,
-    tuneR
+    tuneR,
+    reticulate
 VignetteBuilder: knitr
