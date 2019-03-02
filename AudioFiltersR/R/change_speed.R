@@ -9,5 +9,19 @@
 #' @export
 #'
 change_speed <- function(input_signal, rate) {
-  print("Change speed!")
+  # Transform signal to frequency domain
+  frequency_domain_signal = librosa$core$stft(np$array(input_signal))
+
+  # Change speed with the phase vocoding method
+  fds_changed_speed = librosa$core$phase_vocoder(frequency_domain_signal, rate)
+
+  # Transform frequency domain signal back to time domain
+  td_changed_speed = as.vector(librosa$core$istft(fds_changed_speed))
+
+  # Normalize and create a Wave object
+  output_signal <- tuneR::normalize(
+    tuneR::Wave(left = td_changed_speed, bit = 32, pcm = FALSE, samp.rate = 44100), unit = '32'
+  )
+
+  return(output_signal@left)
 }
