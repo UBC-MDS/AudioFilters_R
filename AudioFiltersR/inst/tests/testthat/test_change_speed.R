@@ -15,3 +15,11 @@ test_that("Result of changing the speed of a known input signal with a rate of 0
 
   expect_equal(output_signal, expected_output)
 })
+
+test_that("Exception is raised for invalid zero rate argument", {
+  expect_error(change_speed(input_signal, 0), "Error: rate must be a positive number")
+})
+
+test_that("Eexception is raised for unsupported input_signal argument type", {
+  expect_error(change_speed("test", 3), "Error: input_signal must be numeric")
+})
