@@ -9,6 +9,17 @@
 #' @export
 #'
 change_speed <- function(input_signal, rate) {
+
+  # Raise error if rate is not positive
+  if (rate <= 0) {
+    stop("Error: rate must be a positive number")
+  }
+
+  # Raise error if input_signal is of an unsupported type
+  if (class(input_signal) != "numeric") {
+    stop("Error: input_signal must be numeric")
+  }
+
   # Transform signal to frequency domain
   frequency_domain_signal = librosa$core$stft(np$array(input_signal))
 
