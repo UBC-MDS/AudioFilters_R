@@ -38,7 +38,7 @@ With a vector read from [input.wav](examples/input.wav) as input:
 ##### Low Pass Filters
 
 ```
-TODO
+# TODO
 ```
 
 With a vector read from [input.wav](examples/input.wav) as input:
@@ -48,7 +48,7 @@ With a vector read from [input.wav](examples/input.wav) as input:
 ##### Reverb
 
 ```
-TODO
+# TODO
 ```
 
 With a vector read from [input.wav](examples/input.wav) as input:
@@ -81,6 +81,17 @@ This function applies an effect to an audio signal so that it sounds like it was
 
 ###### low_pass_filter
 This function attenuates audio frequencies above a specified cutoff level.
+
+
+### Test Results
+
+![](img/test_results.png)
+
+
+### Branch Coverage
+
+![](img/coverage_report.png)
+
 
 ### R Ecosystem
 
