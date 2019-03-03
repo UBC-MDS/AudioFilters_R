@@ -15,3 +15,11 @@ test_that("Result of applying church reverb to known input matches the expected 
 
   expect_equal(output_signal, expected_output)
 })
+
+test_that("Exception is raised for unsupported reverb type", {
+  expect_error(add_reverb(input_signal, 'some_reverb_type'), "Error: Unsupported reverb type. Type must be 'hall' or 'church'")
+})
+
+test_that("Eexception is raised for unsupported input_signal argument type", {
+  expect_error(add_reverb("test"), "Error: input_signal must be numeric")
+})

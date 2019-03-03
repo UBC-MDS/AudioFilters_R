@@ -8,6 +8,11 @@
 #'
 add_reverb <- function(input_signal, type = 'hall') {
 
+  # Raise error if input_signal is of an unsupported type
+  if (class(input_signal) != "numeric") {
+    stop("Error: input_signal must be numeric")
+  }
+
   if (type == 'hall') {
     impulse_response <- read.csv(system.file("impulse_responses", "impulse_hall.csv", package = "AudioFiltersR"), colClasses=c('numeric'))[[1]]
   } else if (type == 'church') {
@@ -18,7 +23,7 @@ add_reverb <- function(input_signal, type = 'hall') {
 
   convolved_signal <- convolve(input_signal, rev(impulse_response), type = 'open')
   output_signal <- tuneR::normalize(
-    tuneR::Wave(left= convolved_signal, bit = 32, pcm = FALSE, samp.rate = 44100), unit = '32'
+    tuneR::Wave(left = convolved_signal, bit = 32, pcm = FALSE, samp.rate = 44100), unit = '32'
   )
 
   return(output_signal@left[-1])

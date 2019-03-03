@@ -26,7 +26,13 @@ All three functions expect a numeric vector as the input_signal and can be used 
 ##### Change Speed
 
 ```
-# TODO
+library(AudioFilters)
+
+# Use a number greater than one to speed up the file
+signal_faster <- change_speed(input_signal, 2)
+
+# Use a number between 0 and 1 to slow down the file
+signal_slower <- change_speed(input_signal, 0.5)
 ```
 
 With a vector read from [input.wav](examples/input.wav) as input:
@@ -35,10 +41,13 @@ With a vector read from [input.wav](examples/input.wav) as input:
 
 - [Result of halving the speed](examples/output_slower.wav)
 
-##### Low Pass Filters
+##### Low Pass Filter
 
 ```
-TODO
+library(AudioFilters)
+
+# Use 880 as the cutoff_frequency to attenuate all frequencies above that
+signal_attenuated_above_880 <- low_pass_filter(input_signal, 880)
 ```
 
 With a vector read from [input.wav](examples/input.wav) as input:
@@ -48,7 +57,13 @@ With a vector read from [input.wav](examples/input.wav) as input:
 ##### Reverb
 
 ```
-TODO
+library(AudioFilters)
+
+# Use 'hall' to add a reverb effect that simulates a hall-like recording environment
+hall_reverb <- add_reverb(input_signal, 'hall')
+
+# Use 'church' to add a reverb effect that simulates a church-like recording environment
+church_reverb <- add_reverb(input_signal, 'church')
 ```
 
 With a vector read from [input.wav](examples/input.wav) as input:
@@ -81,6 +96,17 @@ This function applies an effect to an audio signal so that it sounds like it was
 
 ###### low_pass_filter
 This function attenuates audio frequencies above a specified cutoff level.
+
+
+### Test Results
+
+![](img/test_results.png)
+
+
+### Branch Coverage
+
+![](img/coverage_report.png)
+
 
 ### R Ecosystem
 
