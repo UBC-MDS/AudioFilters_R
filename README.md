@@ -80,9 +80,11 @@ To install the package, follow these instructions:
 1. Check if `devtools` has been installed. If not, open the console and input the following:
 `install.packages("devtools")` to install devtools from CRAN.
 
-2. Input the following into the R console:
+2. The package uses `reticulate` to interact with a Python 3.7 module. This requires installing `conda`. If you don't already have `conda` installed we recommend using [Miniconda](https://conda.io/en/latest/miniconda.html#)
+
+3. Input the following into the R console:
 ```
-devtools::install_github("UBC-MDS/AudioFilters_R", build_vignettes = TRUE)
+devtools::install_github("UBC-MDS/AudioFilters_R", subdir = "AudioFiltersR" ,build_vignettes = TRUE)
 ```
 
 
