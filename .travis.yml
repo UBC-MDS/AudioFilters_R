@@ -1,5 +1,7 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
 language: r
 cache: packages
 warnings_are_errors: false
@@ -9,5 +11,13 @@ notifications:
     on_failure: true
 before_install:
   # Install conda
-  - pip install numpy
-  - pip install conda
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+  - conda create -q -n r-reticulate python=$TRAVIS_PYTHON_VERSION
+  - source activate r-reticulate
+  - conda install -c conda-forge librosa 
