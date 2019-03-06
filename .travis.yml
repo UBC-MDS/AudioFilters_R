@@ -19,4 +19,4 @@ before_install:
   - conda create -q -n r-reticulate python=$TRAVIS_PYTHON_VERSION
   - source activate r-reticulate
   - conda install -c conda-forge librosa
-  - conda install numpy
+  - pip install numpy
