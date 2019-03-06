@@ -9,4 +9,5 @@ notifications:
     on_failure: true
 before_install:
   # Install conda
-  - pip install conda librosa numpy
+  - pip install numpy
+  - pip install conda
