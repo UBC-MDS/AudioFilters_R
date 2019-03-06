@@ -3,6 +3,7 @@
 language: r
 cache: packages
 warnings_are_errors: false
+notes_are_errors: false
 notifications:
     on_success: never
     on_failure: true
