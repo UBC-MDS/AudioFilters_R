@@ -3,3 +3,5 @@
 export(add_reverb)
 export(change_speed)
 export(low_pass_filter)
+importFrom("stats", "convolve")
+importFrom("utils", "read.csv")
