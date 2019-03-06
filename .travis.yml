@@ -7,6 +7,6 @@ dist: trusty
 notifications:
     on_success: never
     on_failure: true
-install:
+before_install:
   # Install conda
   - pip install conda
