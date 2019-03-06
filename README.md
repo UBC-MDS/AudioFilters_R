@@ -113,3 +113,5 @@ This function attenuates audio frequencies above a specified cutoff level.
 ### R Ecosystem
 
 [Seewave](http://rug.mnhn.fr/seewave/) is an R package dedicated to sound analysis and synthesis, and includes a filter, [ffilter](http://rug.mnhn.fr/seewave/HTML/MAN/ffilter.html) with similar functionality to our high-pass filter. The functionality to be implemented by our system will also include functions for changing speed and reverb which are not found in Seewave. We do not plan to use any digital signal processing packages. We plan to code the convolutions mathematically within the functions so that they are easily testable and interpretable. We will make limited use of other packages to represent waveforms, and input/output as necessary.
+
+[![Build Status](https://travis-ci.org/UBC-MDS/AudioFilters_R.svg?branch=add_travis)](https://travis-ci.org/UBC-MDS/AudioFilters_R)
