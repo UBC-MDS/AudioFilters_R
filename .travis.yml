@@ -20,3 +20,4 @@ before_install:
   - source activate r-reticulate
   - conda install -c conda-forge librosa
   - conda install -c conda-forge numpy
+  - conda install -c conda-forge retriculate
