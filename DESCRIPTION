@@ -20,5 +20,7 @@ Suggests:
 Imports: 
     signal,
     tuneR,
-    reticulate
+    reticulate,
+    stats,
+    utils
 VignetteBuilder: knitr
