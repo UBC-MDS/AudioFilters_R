@@ -9,4 +9,4 @@ notifications:
     on_failure: true
 install:
   # Install conda
-  - sudo pip install conda
+  - pip install conda
