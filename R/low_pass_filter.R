@@ -5,9 +5,6 @@
 #'
 #' @return numeric, vector representing the audio signal with frequencies below the cut off attenuated.
 #' @export
-#'
-#' @examples
-#' low_pass_filter(input_signal, 1000)
 
 low_pass_filter <- function(input_signal, cutoff_frequency) {
 

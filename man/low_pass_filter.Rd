@@ -12,7 +12,7 @@ low_pass_filter(input_signal, cutoff_frequency)
 \item{cutoff_frequency}{numeric, cutoff frequency of the low pass filter.}
 }
 \value{
-numeric, vector representing the audio signal with frequencies below the cut off attenuated by 24 db.
+numeric, vector representing the audio signal with frequencies below the cut off attenuated.
 }
 \description{
 Filter audio signal, attenuating frequencies below a cut off.
