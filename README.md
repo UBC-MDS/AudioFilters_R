@@ -3,7 +3,9 @@
 
 # Audio Filters R
 
-R project for sound convolutions
+[![Build Status](https://travis-ci.org/UBC-MDS/AudioFilters_R.svg?branch=master)](https://travis-ci.org/UBC-MDS/AudioFilters_R)
+
+R project for sound convolutions.
 
 ### Contributors
 
@@ -82,9 +84,17 @@ To install the package, follow these instructions:
 
 2. The package uses `reticulate` to interact with a Python 3.7 module. This requires installing `conda`. If you don't already have `conda` installed we recommend using [Miniconda](https://conda.io/en/latest/miniconda.html#)
 
-3. Input the following into the R console:
+3. Run the following commands to install the Python dependencies:
 ```
-devtools::install_github("UBC-MDS/AudioFilters_R", subdir = "AudioFiltersR" ,build_vignettes = TRUE)
+conda create -q -n r-reticulate
+source activate r-reticulate
+conda install -c conda-forge numpy
+pip install librosa
+```
+
+4. Input the following into the R console:
+```
+devtools::install_github("UBC-MDS/AudioFilters_R", build_vignettes = TRUE)
 ```
 
 
@@ -113,5 +123,3 @@ This function attenuates audio frequencies above a specified cutoff level.
 ### R Ecosystem
 
 [Seewave](http://rug.mnhn.fr/seewave/) is an R package dedicated to sound analysis and synthesis, and includes a filter, [ffilter](http://rug.mnhn.fr/seewave/HTML/MAN/ffilter.html) with similar functionality to our high-pass filter. The functionality to be implemented by our system will also include functions for changing speed and reverb which are not found in Seewave. We do not plan to use any digital signal processing packages. We plan to code the convolutions mathematically within the functions so that they are easily testable and interpretable. We will make limited use of other packages to represent waveforms, and input/output as necessary.
-
-[![Build Status](https://travis-ci.org/UBC-MDS/AudioFilters_R.svg?branch=master)](https://travis-ci.org/UBC-MDS/AudioFilters_R)
